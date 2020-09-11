@@ -1,3 +1,5 @@
+@import 'variables';
+
 *, *::before, *::after {
     margin: 0;
     padding: 0;
@@ -7,6 +9,7 @@
 html {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
+    color: $primary-color;
 }
 
 body {
@@ -31,16 +34,16 @@ body {
 .loader {
     display: inline-block;
     margin: 0 auto;
-    width: 140px;
-    height: 140px;
-    border: 20px solid #f4f4f4;
-    border-top-color: #333;
+    width: $loader-size;
+    height: $loader-size;
+    border: 20px solid $secondary-color;
+    border-top-color: $primary-color;
     border-radius: 50%;
     animation: spin 2s linear infinite;
 }
 
 .board {
-    background-color: red;
+    background-color: #fff;
 }
 
 .hidden {
