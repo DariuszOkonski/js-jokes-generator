@@ -17,7 +17,7 @@ body {
 .container {
     text-align: center;
     margin: 1rem;
-    max-width: 700px;
+    max-width: 900px;
 }
 
 .loader {
@@ -32,7 +32,36 @@ body {
 }
 
 .board {
-    background-color: #fff;
+    background-color: rgba($secondary-color, 0.5);
+    padding: 2rem;
+    // border: 1px solid $primary-color;
+    border-radius: 1rem;
+    min-height: 200px;
+    box-shadow: 0px 10px 40px 1px rgba($primary-color,0.56);
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    &__content {
+        // background-color: red;
+        margin-bottom: 2rem;
+        .icon {
+            font-size: 4rem;
+        }
+
+        .text {
+            font-size: 2.5rem;
+
+        }
+    }
+
+    &__buttons {
+        width: 100%;
+        background-color: green;
+    }
 }
 
 .hidden {
