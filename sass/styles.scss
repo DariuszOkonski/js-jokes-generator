@@ -22,6 +22,36 @@ body {
     align-items: center;
 }
 
-h1 {
-    color: red;
+.container {
+    text-align: center;
+    margin: 1rem;
+    max-width: 700px;
+}
+
+.loader {
+    display: inline-block;
+    margin: 0 auto;
+    width: 140px;
+    height: 140px;
+    border: 20px solid #f4f4f4;
+    border-top-color: #333;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+.board {
+    background-color: red;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
