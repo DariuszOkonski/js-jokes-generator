@@ -25,8 +25,7 @@ function checkJokeLength(joke) {
 function getNewJoke() {
     toggleLoading();
 
-    setTimeout(() => {
-        
+    setTimeout(() => {        
         
         fetch(jokeAPI)
         .then(resp => {
@@ -39,7 +38,7 @@ function getNewJoke() {
             const joke = data.value.joke;
             
             checkJokeLength(joke);
-            domElements.spanText.innerText = joke;
+            domElements.spanText.innerText = replace(joke);
             toggleLoading();
         })
         .catch(err => {
@@ -57,6 +56,10 @@ function goToTwitter() {
 function toggleLoading() {
     domElements.divLoader.classList.toggle('hidden');
     domElements.divBoard.classList.toggle('hidden');
+}
+
+function replace(str) {
+    return str.replaceAll('&quot;', '\"')
 }
 
 addEventsListeners();
