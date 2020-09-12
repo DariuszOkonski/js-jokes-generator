@@ -1,7 +1,7 @@
 const domElements = {
     spanText: document.querySelector('[data-text]'),
     divLoader: document.querySelector('[data-loader]'),
-    divBoard: document.querySelector('[data-loader]'),
+    divBoard: document.querySelector('[data-board]'),
     btnTwitter: document.querySelector('[data-btn-twitter]'),
     btnJoke: document.querySelector('[data-btn-joke]')
 }
@@ -15,8 +15,6 @@ function addEventsListeners() {
 }
 
 function checkJokeLength(joke) {
-    console.log(joke.length);
-
     if(joke.length > textLength) {
         domElements.spanText.classList.add('text--small');
     } else {
@@ -25,8 +23,7 @@ function checkJokeLength(joke) {
 }
 
 function getNewJoke() {
-    // toggleLoading();
-    // addLoading();
+    toggleLoading();
 
     setTimeout(() => {
         
@@ -43,7 +40,7 @@ function getNewJoke() {
             
             checkJokeLength(joke);
             domElements.spanText.innerText = joke;
-            // toggleLoading();
+            toggleLoading();
         })
         .catch(err => {
             console.log('Something went wrong: ', err.message);
@@ -57,20 +54,10 @@ function goToTwitter() {
     window.open(twitterUrl, '_blank');
 }
 
-function addLoading() {
-    domElements.divLoader.classList.remove('hidden');
-    domElements.divBoard.classList.add('hidden');
-}
-
-function removeLoading() {
-    console.log('remove loading');
-}
-
 function toggleLoading() {
     domElements.divLoader.classList.toggle('hidden');
     domElements.divBoard.classList.toggle('hidden');
 }
 
-// Call funcions
 addEventsListeners();
 getNewJoke();
